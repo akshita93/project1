@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block content1 %}
+<center>
+    <h1>Confirmtion</h1>
+    <form method = post>
+        <h2>Do you Rellay delete record</h2>
+        {% csrf_token %}
+        <input type = 'submit' value= 'SUBMIT'>
+        <a href="{% url 'show_url' %}"><button type="button" class="btn btn-warning col-4">No</button></a>
+    </form>
+</center>
+{% endblock %}

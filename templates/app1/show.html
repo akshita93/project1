@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block title %}
+<title>Show</title>
+{% endblock %}
+
+{% block content1 %}
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Emlpoyee Email</th>
+            <th>DOB</th>
+            <th>Mobile</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+        <tr>
+        <td>{{i.eid}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.DOB}}</td>
+        <td>{{i.mobile}}</td>
+        <td><a href="{% url 'update_url' i.eid %}"><button class="btn btn-warning">Update</button></a></td>
+        <td><a href="{% url 'delete_url' i.eid %}"><button class="btn btn-danger">Delete</button></a></td>
+     </tr>
+     {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
